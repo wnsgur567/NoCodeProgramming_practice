@@ -1,5 +1,8 @@
 #include "Tree1_traverse.h"
 #include "Tree2_iterative.h"
+#include "Tree3_level.h"
+
+#include "Tree4_PathSum.h"
 
 int main()
 {
@@ -11,7 +14,11 @@ int main()
 	Tree2_iterative();
 	cout << endl;
 
+	cout << "__level" << endl;
+	Tree3_level();
 	cout << endl;
-	
+
+	cout << "__Path Sum" << endl;
+	Tree4_pathsum();
 	cout << endl;
 }

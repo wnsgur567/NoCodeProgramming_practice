@@ -147,6 +147,7 @@
     <ClInclude Include="Tree1_traverse.h" />
     <ClInclude Include="Tree2_iterative.h" />
     <ClInclude Include="Tree3_level.h" />
+    <ClInclude Include="Tree4_PathSum.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
