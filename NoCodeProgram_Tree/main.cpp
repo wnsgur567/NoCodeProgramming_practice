@@ -4,7 +4,11 @@
 
 #include "Tree4_PathSum.h"
 
-#include"Tree5_Diameter.h"
+#include "Tree5_Diameter.h"
+
+#include "Tree6_LCA.h"
+
+#include "Tree7_Construct_Pre_In.h"
 
 int main()
 {
@@ -26,5 +30,13 @@ int main()
 
 	cout << "__Diameter" << endl;
 	Tree5_Diameter();
+	cout << endl;
+
+	cout << "__LCA" << endl;
+	Tree6_LCA();
+	cout << endl;
+
+	cout << "__Construct" << endl;
+	Tree7_Construct();
 	cout << endl;
 }

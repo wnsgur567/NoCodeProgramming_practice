@@ -18,30 +18,15 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Tree1_traverse.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Tree1_traverse.h">
+    <ClInclude Include="LinkedList1_base.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Tree2_iterative.h">
+    <ClInclude Include="LinkedList3_MergeTwoSortedList.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Tree3_level.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Tree4_PathSum.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Tree5_Diameter.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Tree6_LCA.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Tree7_Construct_Pre_In.h">
+    <ClInclude Include="LinkedList2_RemoveElements.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

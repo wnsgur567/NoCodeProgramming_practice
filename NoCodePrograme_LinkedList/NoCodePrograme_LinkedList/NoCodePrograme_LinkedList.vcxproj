@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{99e1b214-9595-4d9b-9ea5-86752828261d}</ProjectGuid>
-    <RootNamespace>NoCodeProgramTree</RootNamespace>
+    <ProjectGuid>{0474af18-be6d-4f36-94bb-e14eec2c5909}</ProjectGuid>
+    <RootNamespace>NoCodeProgrameLinkedList</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,7 +88,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -141,16 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Tree1_traverse.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Tree1_traverse.h" />
-    <ClInclude Include="Tree2_iterative.h" />
-    <ClInclude Include="Tree3_level.h" />
-    <ClInclude Include="Tree4_PathSum.h" />
-    <ClInclude Include="Tree5_Diameter.h" />
-    <ClInclude Include="Tree6_LCA.h" />
-    <ClInclude Include="Tree7_Construct_Pre_In.h" />
+    <ClInclude Include="LinkedList1_base.h" />
+    <ClInclude Include="LinkedList3_MergeTwoSortedList.h" />
+    <ClInclude Include="LinkedList2_RemoveElements.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

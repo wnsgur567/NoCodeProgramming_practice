@@ -112,7 +112,7 @@ int GetTreeDiameter(TreeNode_diameter* node)
 		node->rightDiameter = 0;
 	}
 
-	node->diameter = node->leftDiameter + node->rightDiameter + 1;
+	node->diameter = node->leftDiameter + node->rightDiameter;
 
 	return node->leftDiameter > node->rightDiameter ? node->leftDiameter + 1 : node->rightDiameter + 1;
 }

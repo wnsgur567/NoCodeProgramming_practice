@@ -57,3 +57,6 @@ public:
 };
 
 void Tree1_traverse();
+void Recursive_PreOrder(const TreeNode* inNode);
+void Recursive_InOrder(const TreeNode* inNode);
+void Recursive_PostOrder(const TreeNode* inNode);
