@@ -145,6 +145,9 @@
     <ClInclude Include="LinkedList1_base.h" />
     <ClInclude Include="LinkedList3_MergeTwoSortedList.h" />
     <ClInclude Include="LinkedList2_RemoveElements.h" />
+    <ClInclude Include="LinkedList4_MiddleOfList.h" />
+    <ClInclude Include="LinkedList5_LoopNode.h" />
+    <ClInclude Include="LinkedList6_Intersection.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
