@@ -41,5 +41,11 @@
     <ClInclude Include="LinkedList7_Reverse.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="LinkedList8_AddTwoNumber.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList9_DeleteNode.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
