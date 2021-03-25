@@ -27,6 +27,17 @@ std::ostream& operator<<(std::ostream& os, const ListNode<T>& _node)
 	return os;
 }
 
+void PrintAll(ListNode<int>* _head)
+{
+	auto curr = _head;
+	while (curr)
+	{
+		cout << *curr << ' ';
+		curr = curr->next;
+	}
+	cout << endl;
+}
+
 template<typename T>
 class LinkedList
 {

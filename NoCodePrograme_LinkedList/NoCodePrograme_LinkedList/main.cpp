@@ -4,6 +4,7 @@
 #include"LinkedList4_MiddleOfList.h"
 #include"LinkedList5_LoopNode.h"
 #include"LinkedList6_Intersection.h"
+#include"LinkedList7_Reverse.h"
 
 int main()
 {
@@ -12,5 +13,6 @@ int main()
 	//LinkedList2_Merge();
 	//LinkedList4_Middle();
 	//LinkedList5_Loop();
-	LinkedList6_Intersection();
+	//LinkedList6_Intersection();
+	LinkedList7_Reverse();
 }
