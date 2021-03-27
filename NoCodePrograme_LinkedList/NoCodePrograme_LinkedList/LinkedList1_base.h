@@ -1,6 +1,29 @@
 #pragma once
 
 #include<iostream>
+#include<cassert>
+#define DELETED 0x0008123
+#define DELETED_REF 0xdddddddd
+
+// 1: nullptr 인 경우 (할당하지 않았거나 nullptr)
+// 2: 할당 후 delete 한 경우 (0x0008123)
+// 3: delete한 포인터를 참조하는 포인터인 경우 (3번 포인터를 참조(*)하면 0xdddddddd)
+
+#define IS_NULL(ptr) \
+(\
+((ptr) == nullptr) || \
+((ptr) == reinterpret_cast<void*>(DELETED)) || \
+(( *( reinterpret_cast<unsigned int*>(ptr) )) == (DELETED_REF))\
+)\
+? true : false
+
+#define IS_NULL_CONST(ptr,non_const_type) \
+(\
+((ptr) == nullptr) || \
+((ptr) == reinterpret_cast<void*>(DELETED)) || \
+(( *( reinterpret_cast<unsigned int*>(  const_cast<non_const_type> (ptr) ) )) == (DELETED_REF))\
+)\
+? true : false
 
 using std::cout;
 using std::endl;
@@ -12,9 +35,9 @@ public:
 	ListNode* next;
 	T value;
 public:
-	ListNode() :next(nullptr), value(INT_MIN) {}
+	ListNode() :next(nullptr), value(T()) {}
 	ListNode(T _value) : next(nullptr), value(_value)
-	{}
+	{}	
 
 	template<typename T>
 	friend std::ostream& operator<<(std::ostream& os, const ListNode<T>& _node);
@@ -30,7 +53,7 @@ std::ostream& operator<<(std::ostream& os, const ListNode<T>& _node)
 void PrintAll(ListNode<int>* _head)
 {
 	auto curr = _head;
-	while (curr)
+	while (!IS_NULL(curr))
 	{
 		cout << *curr << ' ';
 		curr = curr->next;
@@ -86,7 +109,7 @@ void LinkedList<T>::Print()
 
 	ListNode<T>* curr = head;
 	cout << "List 출력..." << endl << ' ';
-	while (curr != nullptr)
+	while (!IS_NULL(curr))
 	{
 		cout << *curr << ' ';
 		curr = curr->next;
@@ -124,7 +147,7 @@ void LinkedList<T>::AddBack(ListNode<T>* _newNode)
 	{
 		// 가장 마지막 노드를 찾기(next가 nullptr인 노드)
 		ListNode<T>* curr = head;
-		while (curr->next != nullptr)
+		while (!IS_NULL(curr->next))
 		{
 			curr = curr->next;
 		}
@@ -150,7 +173,7 @@ void LinkedList<T>::AddBefroe(ListNode<T>* _flagNode, T value)
 	}
 	ListNode<T>* before = head;
 	ListNode<T>* curr = head->next;
-	while (curr != nullptr)
+	while (!IS_NULL(curr))
 	{
 		if (_flagNode == curr)
 		{
@@ -169,7 +192,7 @@ template<typename T>
 void LinkedList<T>::AddAfter(ListNode<T>* _flagNode, T value)
 {
 	ListNode<T>* curr = head;
-	while (curr != nullptr)
+	while (!IS_NULL(curr->next))
 	{
 		if (_flagNode == curr)
 		{
@@ -191,7 +214,7 @@ void LinkedList<T>::DeleteAfter(ListNode<T>* _beforeNode)
 		return;
 
 	ListNode<T>* curr = head;
-	while (curr->next != nullptr)
+	while (!IS_NULL(curr->next))
 	{
 		if (curr == _beforeNode)
 		{
@@ -221,7 +244,7 @@ void LinkedList<T>::Delete(ListNode<T>* _deleteNode)
 
 	ListNode<T>* before = head;
 	ListNode<T>* curr = head->next;
-	while (curr != nullptr)
+	while (!IS_NULL(curr->next))
 	{
 		if (_deleteNode == curr)
 		{
@@ -243,7 +266,7 @@ void LinkedList<T>::FreeAll()
 
 	ListNode<T>* deleteNode = nullptr;
 	ListNode<T>* curr = head;
-	while (curr != nullptr)
+	while (!IS_NULL(curr->next))
 	{
 		deleteNode = curr;
 		curr = curr->next;
@@ -258,7 +281,7 @@ template<typename T>
 ListNode<T>* LinkedList<T>::FindNode(T value)
 {
 	ListNode<T>* curr = head;
-	while (curr != nullptr)
+	while (!IS_NULL(curr))
 	{
 		if (curr->value == value)
 			return curr;

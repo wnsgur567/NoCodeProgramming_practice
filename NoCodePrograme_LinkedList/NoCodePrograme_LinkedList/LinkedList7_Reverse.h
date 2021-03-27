@@ -38,7 +38,7 @@ void LinkedList7_Reverse()
 
 static ListNode<int>* Iterative(ListNode<int>* node)
 {
-	if (node == nullptr)
+	if (IS_NULL(node))
 		return nullptr;
 
 	std::stack<ListNode<int>*> _stack;
@@ -51,7 +51,7 @@ static ListNode<int>* Iterative(ListNode<int>* node)
 			break;
 	}
 
-	auto retNode = curr;	
+	auto retNode = curr;
 
 	while (true)
 	{
@@ -74,18 +74,18 @@ static ListNode<int>* Iterative(ListNode<int>* node)
 // parameter 값으로 , output 전용 노드 하나 파야됨
 static ListNode<int>* Recursive(ListNode<int>* node)
 {
-	if (node->next == nullptr)		
-		return node;		
+	if (IS_NULL(node->next))
+		return node;
 
 	auto _ret = Recursive(node->next);
-	_ret->next = node;	
+	_ret->next = node;
 	node->next = nullptr;
 	return node;
 }
 
 static ListNode<int>* Recursive2(ListNode<int>* node)
 {
-	if (node->next == nullptr)
+	if (IS_NULL(node->next))
 		return node;
 
 	auto _ret = Recursive2(node->next);

@@ -71,15 +71,15 @@ ListNode<int>* Find_MidlleNode_v2(const LinkedList<int>& _list)
 
 	slow = _list.head;
 	fast = _list.head;
-	
+
 	while (true)
-	{			
+	{
 		// slow 이동
 		slow = slow->next;
 
 		// fast 이동
-		fast = fast->next->next;	
-		if (fast == nullptr || fast->next == nullptr)
+		fast = fast->next->next;
+		if (IS_NULL(fast) || IS_NULL(fast->next))
 			return slow;
-	}	
+	}
 }

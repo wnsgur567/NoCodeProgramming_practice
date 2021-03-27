@@ -51,7 +51,7 @@ void LinkedList8_AddTwoNums()
 	delete node12;
 
 	ListNode<int>* curr = result;
-	while (curr)
+	while (!IS_NULL(curr))
 	{
 		auto deleteNode = curr;
 		curr = curr->next;
@@ -73,7 +73,7 @@ static ListNode<int>* GetSum(const ListNode<int>* _head1, const ListNode<int>* _
 	int flag = 0;	// 두 리스트 모두  nullptr이 되면 종료하도록
 	while (true)
 	{
-		if (curr1 != nullptr)
+		if (!IS_NULL_CONST(curr1,ListNode<int>*))
 		{
 			value += curr1->value;
 			curr1 = curr1->next;
@@ -81,7 +81,7 @@ static ListNode<int>* GetSum(const ListNode<int>* _head1, const ListNode<int>* _
 		else
 			++flag;
 
-		if (curr2 != nullptr)
+		if (!IS_NULL_CONST(curr2, ListNode<int>*))
 		{
 			value += curr2->value;
 			curr2 = curr2->next;
@@ -127,11 +127,11 @@ static ListNode<int>* GetSum_NR(const ListNode<int>* _head1, const ListNode<int>
 	std::stack<const ListNode<int>*> _stack2;
 
 	std::stack<int> _result_stack;
-	
+
 
 	// 1번 리스트 스택에 담기
 	auto curr1 = _head1;
-	while (curr1)
+	while (!IS_NULL_CONST(curr1,ListNode<int>*))
 	{
 		_stack1.push(curr1);
 		curr1 = curr1->next;
@@ -139,14 +139,14 @@ static ListNode<int>* GetSum_NR(const ListNode<int>* _head1, const ListNode<int>
 
 	// 2번 리스트 스택에 담기
 	auto curr2 = _head2;
-	while (curr2)
+	while (!IS_NULL_CONST(curr2, ListNode<int>*))
 	{
 		_stack2.push(curr2);
 		curr2 = curr2->next;
 	}
 
 	// 두 스택에서 pop 하며 역으로 계산
-	
+
 	int carry = 0;
 	int value = 0;
 	int flag = 0;
@@ -173,8 +173,8 @@ static ListNode<int>* GetSum_NR(const ListNode<int>* _head1, const ListNode<int>
 		// loop 탈출 조건
 		if (flag == 2)
 		{
-			if (value == 1)			
-				_result_stack.push(value);				
+			if (value == 1)
+				_result_stack.push(value);
 			break;
 		}
 
@@ -184,8 +184,8 @@ static ListNode<int>* GetSum_NR(const ListNode<int>* _head1, const ListNode<int>
 			carry = 1;
 			value -= 10;
 		}
-		
-		_result_stack.push(value);		
+
+		_result_stack.push(value);
 
 		value = carry;
 		carry = 0;
@@ -193,11 +193,11 @@ static ListNode<int>* GetSum_NR(const ListNode<int>* _head1, const ListNode<int>
 	}
 
 	ListNode<int>* dummy = new ListNode<int>(-1000);
-	auto curr = dummy;	
+	auto curr = dummy;
 	while (_result_stack.size())
-	{		
+	{
 		curr->next = new ListNode<int>(_result_stack.top());
-		_result_stack.pop();		
+		_result_stack.pop();
 		curr = curr->next;
 	}
 

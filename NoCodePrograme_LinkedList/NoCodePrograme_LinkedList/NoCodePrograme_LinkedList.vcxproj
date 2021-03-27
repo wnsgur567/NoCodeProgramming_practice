@@ -142,6 +142,9 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LinkedList11_CopyList_withRandomPointer.h" />
+    <ClInclude Include="LinkedList10_partition_reorder.h" />
+    <ClInclude Include="LinkedList12_LRU_Cache.h" />
     <ClInclude Include="LinkedList1_base.h" />
     <ClInclude Include="LinkedList3_MergeTwoSortedList.h" />
     <ClInclude Include="LinkedList2_RemoveElements.h" />

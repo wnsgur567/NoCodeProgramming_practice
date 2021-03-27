@@ -51,7 +51,7 @@ static const ListNode<int>* Find_LoopNode(const ListNode<int>* _node)
 
 	const ListNode<int>* curr = _node;
 	std::unordered_set<const ListNode<int>*> _set;
-	while (curr != nullptr)
+	while ( !IS_NULL_CONST(curr,ListNode<int>*) )
 	{
 		if (_set.find(curr) != _set.end())
 			return curr;
@@ -67,7 +67,7 @@ static const ListNode<int>* Find_LoopNode(const ListNode<int>* _node)
 // 어떤 노드인진 판별 불가능
 static bool Find_LoopNode_v2(const ListNode<int>* _node)
 {
-	if (_node == nullptr)
+	if ( IS_NULL_CONST(_node,ListNode<int>*))
 		return false;
 
 	auto slow = _node;

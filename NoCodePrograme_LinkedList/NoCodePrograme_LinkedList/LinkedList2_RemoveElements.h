@@ -61,7 +61,7 @@ static void RemoveIterative(ListNode<int>* head, int findValue)
 
 	ListNode<int>* before = dummy;
 	ListNode<int>* curr = head;
-	while (curr != nullptr)
+	while (!IS_NULL(curr))
 	{
 		if (curr->value == findValue)
 		{

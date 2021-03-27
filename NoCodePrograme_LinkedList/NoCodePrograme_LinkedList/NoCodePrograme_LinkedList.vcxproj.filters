@@ -47,5 +47,14 @@
     <ClInclude Include="LinkedList9_DeleteNode.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="LinkedList10_partition_reorder.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList11_CopyList_withRandomPointer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList12_LRU_Cache.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

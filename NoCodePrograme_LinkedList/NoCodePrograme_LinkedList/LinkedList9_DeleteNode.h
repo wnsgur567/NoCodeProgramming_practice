@@ -10,9 +10,9 @@
 #include"LinkedList1_base.h"
 
 ListNode<int>* Recursive(ListNode<int>*, int&, int);
-ListNode<int>* TwoPass_Counter(ListNode<int>*,int);
-ListNode<int>* Array(ListNode<int>*,int);
-ListNode<int>* TwoNodes_OnePass(ListNode<int>*,int);
+ListNode<int>* TwoPass_Counter(ListNode<int>*, int);
+ListNode<int>* Array(ListNode<int>*, int);
+ListNode<int>* TwoNodes_OnePass(ListNode<int>*, int);
 
 void LinkedList9_Delete()
 {
@@ -29,7 +29,7 @@ void LinkedList9_Delete()
 
 	//auto _result = TwoPass_Counter(node1, 2);		// 1 3 5 9
 	//auto _result = TwoPass_Counter(node1, 10);	// 3 5 7 9	/ size 보다 큰 값은 head를 삭제
-	
+
 	//auto _result = Array(node1, 2);					// 1 3 5 9
 	//auto _result = Array(node1, 10);					// 3 5 7 9
 
@@ -38,7 +38,7 @@ void LinkedList9_Delete()
 	PrintAll(_result);
 
 	auto curr = _result;
-	while (curr)
+	while (!IS_NULL(curr))
 	{
 		auto deletenode = curr;
 		curr = curr->next;
@@ -62,15 +62,15 @@ static ListNode<int>* TwoPass_Counter(ListNode<int>* head, int target_from_back)
 	dummy->next = head;
 	ListNode<int>* curr = dummy->next;
 	int count = 0;
-	while (curr)
-	{		
+	while (!IS_NULL(curr))
+	{
 		++count;
 		curr = curr->next;
 	}
 
 	// while 종료시 count 는 리스트의 노드 개수
 	// count - target = delete index
-	int index = count - target_from_back;	
+	int index = count - target_from_back;
 	ListNode<int>* before = dummy;
 	curr = dummy->next;	//head
 	for (int i = 0; i < index; i++)
@@ -80,7 +80,7 @@ static ListNode<int>* TwoPass_Counter(ListNode<int>* head, int target_from_back)
 	}
 	before->next = curr->next;
 	delete curr;
-		
+
 	ListNode<int>* ret = dummy->next;
 	delete dummy;
 	return ret;
@@ -94,7 +94,7 @@ static ListNode<int>* Array(ListNode<int>* head, int target_from_back)
 	dummy->next = head;
 	ListNode<int>* curr = dummy;
 	int count = 0;	// dummy를 포함한 카운트
-	while (curr)
+	while (!IS_NULL(curr))
 	{
 		++count;
 		curr = curr->next;
@@ -107,7 +107,7 @@ static ListNode<int>* Array(ListNode<int>* head, int target_from_back)
 		arr[i] = curr;
 		curr = curr->next;
 	}
-	
+
 	int index = count - target_from_back;
 
 	if (index < 1)
@@ -115,7 +115,7 @@ static ListNode<int>* Array(ListNode<int>* head, int target_from_back)
 
 	arr[index - 1]->next = arr[index]->next;
 	delete arr[index];
-	
+
 	auto ret = dummy->next;
 	delete dummy;
 	delete[] arr;
@@ -133,7 +133,7 @@ static ListNode<int>* TwoNodes_OnePass(ListNode<int>* head, int target_from_back
 	for (size_t i = 0; i < target_from_back; i++)
 	{
 		// target 이 size 보다 큰 경우
-		if (first->next == nullptr) {
+		if (IS_NULL(first->next)) {
 			target_from_back = i;
 			break;
 		}
@@ -143,7 +143,7 @@ static ListNode<int>* TwoNodes_OnePass(ListNode<int>* head, int target_from_back
 
 	// 한칸씩 이동, first 가 마지막 노드에 도달하면 종료
 	// 반복문 종료 후 second는 삭제할 노드의 전 노드의 위치임
-	while (first->next)
+	while (!IS_NULL(first->next))
 	{
 		first = first->next;
 		second = second->next;

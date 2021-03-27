@@ -35,7 +35,7 @@ void LinkedList6_Intersection()
 	auto _intersection_v2 = GetIntersection_v2(node1, node6);
 	cout << *_intersection_v2 << endl;
 
-	
+
 	auto node10 = new ListNode<int>(1);
 	auto node20 = new ListNode<int>(3);
 	auto node30 = new ListNode<int>(5);
@@ -50,7 +50,7 @@ void LinkedList6_Intersection()
 
 	auto _test = GetIntersection_v2(node10, node50);
 	if (_test == nullptr)
-		cout << "nullptr" << endl;	
+		cout << "nullptr" << endl;
 
 	delete node1;
 	delete node2;
@@ -70,16 +70,16 @@ static const ListNode<int>* GetIntersection(const ListNode<int>* _node1, const L
 {
 	auto curr1 = _node1;
 	auto curr2 = _node2;
-	
+
 	std::unordered_set<const ListNode<int>*> _set;
 
-	while (curr1 != nullptr)
+	while (!IS_NULL_CONST(curr1, ListNode<int>*))
 	{
 		_set.insert(curr1);
 		curr1 = curr1->next;
 	}
 
-	while (curr2 != nullptr)
+	while (!IS_NULL_CONST(curr2, ListNode<int>*))
 	{
 		// 동일한 노드를 찾으면
 		if (_set.find(curr2) != _set.end())
@@ -101,17 +101,17 @@ static const ListNode<int>* GetIntersection_v2(const ListNode<int>* _node1, cons
 	while (true)
 	{
 		curr1 = curr1->next;
-		if (curr1 == nullptr)
+		if (IS_NULL_CONST(curr1, ListNode<int>*))
 		{
 			curr1 = _node2;
 			if (++cnt > 1)
 				return nullptr;
 		}
 		curr2 = curr2->next;
-		if (curr2 == nullptr)
+		if (IS_NULL_CONST(curr2, ListNode<int>*))
 		{
-			curr2 = _node1;			
-		}			
+			curr2 = _node1;
+		}
 
 		if (curr1 == curr2)
 			return curr1;

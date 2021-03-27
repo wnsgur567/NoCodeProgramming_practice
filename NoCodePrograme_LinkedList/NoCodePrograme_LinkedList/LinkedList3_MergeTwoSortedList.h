@@ -29,7 +29,7 @@ void LinkedList2_Merge()
 
 	ListNode<int>* output_head;
 	output_head = MergeList_Recursive(list1.head, list2.head);
-	while (output_head != nullptr)
+	while (!IS_NULL(output_head))
 	{
 		cout << *output_head << ' ';
 		output_head = output_head->next;
@@ -40,20 +40,20 @@ void LinkedList2_Merge()
 
 static ListNode<int>* MergeList_Recursive(ListNode<int>* node1, ListNode<int>* node2)
 {
-	if (node1 == nullptr && node2 == nullptr)
+	if (IS_NULL(node1) && IS_NULL(node2))
 		return nullptr;
 
 	ListNode<int>* next;
 	ListNode<int>* newNode;
 
-	if (node1 == nullptr)
+	if (IS_NULL(node1))
 	{
 		next = MergeList_Recursive(node1, node2->next);
 		newNode = new ListNode<int>(node2->value);
 		newNode->next = next;
 		return newNode;
 	}
-	else if (node2 == nullptr)
+	else if (IS_NULL(node2))
 	{
 		next = MergeList_Recursive(node1->next, node2);
 		newNode = new ListNode<int>(node1->value);
@@ -107,18 +107,18 @@ static void MergeList_Iterative(const LinkedList<int>& list1, const LinkedList<i
 	// 본체
 	while (true)
 	{
-		if (curr1 == nullptr && curr2 == nullptr)
+		if (IS_NULL(curr1) && IS_NULL(curr2))
 		{
 			// 종료
 			return;
 		}
-		if (curr1 == nullptr)
+		if (IS_NULL(curr1))
 		{
 			outputList.AddBack(new ListNode<int>(curr2->value));
 			curr2 = curr2->next;
 			continue;
 		}
-		if (curr2 == nullptr)
+		if (IS_NULL(curr2))
 		{
 			outputList.AddBack(new ListNode<int>(curr1->value));
 			curr1 = curr1->next;

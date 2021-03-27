@@ -7,8 +7,11 @@
 #include"LinkedList7_Reverse.h"
 #include"LinkedList8_AddTwoNumber.h"
 #include"LinkedList9_DeleteNode.h"
+#include"LinkedList10_partition_reorder.h"
+#include"LinkedList11_CopyList_withRandomPointer.h"
 
-
+// null 체크를 -> base 헤더의 IS_NULL 매크로로 바꾸어 정의함
+// 수정 안한부분은 오류 있을 수 있음!!!
 
 int main()
 {
@@ -17,8 +20,11 @@ int main()
 	//LinkedList2_Merge();
 	//LinkedList4_Middle();
 	//LinkedList5_Loop();
-	//LinkedList6_Intersection();
+	//LinkedList6_Intersection();	
 	//LinkedList7_Reverse();
 	//LinkedList8_AddTwoNums();
-	LinkedList9_Delete();
+	//LinkedList9_Delete();
+	//LinkedList10_Partition();
+	//LinkedList10_ReOrder();
+	LinkedList11_Copy();
 }
