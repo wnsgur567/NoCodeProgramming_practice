@@ -47,5 +47,11 @@
     <ClInclude Include="Tree8_BST.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Tree9_SortedArrayToBST.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree9_LCA.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
