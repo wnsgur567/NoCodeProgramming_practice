@@ -1,18 +1,15 @@
 #include "Tree1_traverse.h"
 #include "Tree2_iterative.h"
 #include "Tree3_level.h"
-
 #include "Tree4_PathSum.h"
-
 #include "Tree5_Diameter.h"
-
 #include "Tree6_LCA.h"
-
 #include "Tree7_Construct_Pre_In.h"
+#include "Tree8_BST.h"
 
 int main()
 {
-	cout << "__Traverse" << endl;
+	/*cout << "__Traverse" << endl;
 	Tree1_traverse();
 	cout << endl;
 
@@ -38,5 +35,8 @@ int main()
 
 	cout << "__Construct" << endl;
 	Tree7_Construct();
-	cout << endl;
+	cout << endl;*/
+
+	Tree8_BST();
+
 }
