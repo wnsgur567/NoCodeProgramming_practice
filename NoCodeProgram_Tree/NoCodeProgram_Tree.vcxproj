@@ -154,6 +154,7 @@
     <ClInclude Include="Tree8_BST.h" />
     <ClInclude Include="Tree9_LCA.h" />
     <ClInclude Include="Tree9_SortedArrayToBST.h" />
+    <ClInclude Include="Tree10_Trie.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

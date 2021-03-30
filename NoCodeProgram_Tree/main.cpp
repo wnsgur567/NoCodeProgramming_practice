@@ -8,6 +8,7 @@
 #include "Tree8_BST.h"
 #include "Tree9_SortedArrayToBST.h"
 #include "Tree9_LCA.h"
+#include "Tree10_Trie.h"
 
 int main()
 {
@@ -40,5 +41,7 @@ int main()
 	cout << endl;*/
 
 	//Tree8_BST();
-	Tree9_LCAofBST();
+	//Tree9_LCAofBST();
+	Tree10_Trie();
+
 }

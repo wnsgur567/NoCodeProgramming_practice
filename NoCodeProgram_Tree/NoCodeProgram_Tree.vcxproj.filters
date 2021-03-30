@@ -53,5 +53,8 @@
     <ClInclude Include="Tree9_LCA.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Tree10_Trie.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
