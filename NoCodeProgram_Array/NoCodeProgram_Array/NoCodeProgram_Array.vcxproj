@@ -140,6 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Array1_quicksort.h" />
+    <ClInclude Include="Array2_BinarySearch.h" />
+    <ClInclude Include="Array3_MoveZero.h" />
     <ClInclude Include="base.h" />
   </ItemGroup>
   <ItemGroup>

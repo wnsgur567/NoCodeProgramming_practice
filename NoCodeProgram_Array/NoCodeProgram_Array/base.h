@@ -34,6 +34,7 @@ public:
 			if (false == IsExist(ret_arr, _curr_size, new_num))
 			{
 				ret_arr[i] = new_num;
+				++_curr_size;
 			}
 			else
 			{
@@ -59,7 +60,7 @@ public:
 		for (int i = 0; i < replace_count; i++)
 		{
 			int _rand_index = rand() % max_value;
-			ret_arr[_rand_index] = ret_arr[0];			
+			ret_arr[_rand_index] = ret_arr[0];
 		}
 
 		return ret_arr;
@@ -74,11 +75,39 @@ void PrintArray(int* arr, int _arr_size)
 	}
 	printf("\n");
 }
+void PrintArray(int* arr, int start, int end)
+{
+	for (int i = start; i < end + 1; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+}
 
 void Swap(int* num1, int* num2)
 {
 	int tmp = *num1;
 
-	*num2 = *num1;
-	*num1 = tmp;
+	*num1 = *num2;
+	*num2 = tmp;
+}
+
+// 중복값 없다는 가정하에
+bool IsSorted(int* arr, int _arr_size)
+{
+	int before = -1;
+	for (int i = 0; i < _arr_size; i++)
+	{
+		if (arr[i] <= before)
+			return false;
+	}
+	return true;
+}
+
+void CopyArr(int* source, int* dest, int _arr_size)
+{
+	for (int i = 0; i < _arr_size; i++)
+	{
+		dest[i] = source[i];
+	}
 }

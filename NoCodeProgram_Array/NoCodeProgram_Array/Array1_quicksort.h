@@ -7,20 +7,44 @@
 
 #include "base.h"
 #include <map>
+#include <iostream>
+using std::cout;
+using std::endl;
 
 void quickSort(int nums[], int left, int right);
+
+#define ARR_SIZE 10
 
 void Array1_QuickSort()
 {
 	RandomArrayMaker _rand;
 
-	int arr_size = 10;
-	int* arr = _rand.GetRandomArray(arr_size, 20);
-	PrintArray(arr, arr_size);
+	int arr[ARR_SIZE] = { 11,15,10,14,9,4,7,13,19,12 };
 
+	// 중복 없는 arr
+
+	int i = 0;
+	while (i < 100000)
+	{
+		int copied[ARR_SIZE];
+		CopyArr(arr, copied, ARR_SIZE);
+		quickSort(copied, 0, ARR_SIZE - 1);
+		if (IsSorted(copied, ARR_SIZE) == false)
+		{
+			cout << "ERROR" << endl;
+			break;
+		}
+		++i;
+	}
+	cout << "succeed" << endl;
+
+
+
+
+	//int* arr = _rand.GetRandomArray(arr_size, 20);
+	/*PrintArray(arr, arr_size);
 	quickSort(arr, 0, arr_size - 1);
-
-	PrintArray(arr, arr_size);
+	PrintArray(arr, arr_size);*/
 }
 
 
@@ -67,25 +91,45 @@ static void quickSort(int nums[], int left, int right)
 	if (left < right)
 	{
 		int pivot = partition(nums, left, right);
-
+		//cout << "-- index, pivot : " << pivot << "," << nums[pivot] << endl;
 		// sorting
 		Swap(&nums[right], &nums[pivot]);
 		pivot = right;
 
 		int lp = left;
-		int rp = right;
-
-		while (lp < rp)
+		int rp = right - 1;
+		int counter = 0;
+		while (true)
 		{
-			while (nums[lp] < nums[pivot]) lp++;
-			while (nums[rp] > nums[pivot]) rp--;
-			Swap(&nums[rp], &nums[lp]);
+			while ((nums[lp] < nums[pivot]) &&
+				(lp < right))
+			{
+				++lp;
+			}
+			while ((nums[rp] > nums[pivot]) &&
+				(rp > left))
+			{
+				--rp;
+			}
+
+			// 만나거나 교차되면 중지
+			if (lp >= rp)
+			{
+				break;
+			}
+
+			counter++;
+			Swap(&nums[rp--], &nums[lp++]);
+			//PrintArray(nums, left, right);
 		}
-		Swap(&nums[rp], &nums[pivot]);
-		pivot = rp;
+		Swap(&nums[lp], &nums[pivot]);
+		pivot = lp;
 		// sorting end
 
-		PrintArray(nums, right - left + 1);
+		//PrintArray(nums, left, right);
+
+		if (counter == 0)
+			return;
 
 		quickSort(nums, left, pivot - 1);
 		quickSort(nums, pivot + 1, right);
