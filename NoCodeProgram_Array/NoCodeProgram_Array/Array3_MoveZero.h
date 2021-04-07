@@ -11,6 +11,7 @@ using std::endl;
 
 void MoveZero1(int* arr, int arr_size);
 void MoveZero2(int* arr, int arr_size);
+void MoveZero3(int* arr, int arr_size);
 
 // 0 을 좌측 끝으로 이동시키기
 void Array2_MoveZero()
@@ -18,8 +19,8 @@ void Array2_MoveZero()
 	int arr[8] = { 0,5,0,7,6,3,0,1 };
 
 	//MoveZero1(arr, 6);
-	MoveZero2(arr, 8);
-
+	//MoveZero2(arr, 8);
+	MoveZero3(arr, 8);
 	for (int i = 0; i < 8; i++)
 	{
 		cout << arr[i] << ' ';
@@ -91,4 +92,17 @@ static void MoveZero2(int* arr, int arr_size)
 		arr[index] = 0;
 	}
 
+}
+
+static void MoveZero3(int* arr ,int arr_size)
+{
+	int index = 0;
+	for (int i = 0; i < arr_size; i++)
+	{
+		if (arr[i] != 0)
+		{
+			Swap(&arr[index], &arr[i]);
+			++index;
+		}
+	}
 }
