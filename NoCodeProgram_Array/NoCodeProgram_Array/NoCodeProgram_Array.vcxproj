@@ -142,6 +142,8 @@
     <ClInclude Include="Array1_quicksort.h" />
     <ClInclude Include="Array2_BinarySearch.h" />
     <ClInclude Include="Array3_MoveZero.h" />
+    <ClInclude Include="Array4_FindPivotIndex.h" />
+    <ClInclude Include="Array4_MinimumSize_SubArray.h" />
     <ClInclude Include="base.h" />
   </ItemGroup>
   <ItemGroup>

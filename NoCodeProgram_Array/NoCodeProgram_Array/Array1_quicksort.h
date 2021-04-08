@@ -84,6 +84,7 @@ static int partition(int nums[], int left, int right)
 			return it->first;
 		}
 	}
+	return -1;
 }
 
 static void quickSort(int nums[], int left, int right)

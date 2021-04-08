@@ -100,7 +100,7 @@ static void MoveZero3(int* arr ,int arr_size)
 	for (int i = 0; i < arr_size; i++)
 	{
 		if (arr[i] != 0)
-		{
+		{	// 0 이 아니면 같이 움직이고
 			Swap(&arr[index], &arr[i]);
 			++index;
 		}
