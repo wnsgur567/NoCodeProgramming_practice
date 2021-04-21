@@ -4,6 +4,9 @@
 #include "Array4_FindPivotIndex.h"
 #include "Array4_MinimumSize_SubArray.h"
 #include "Array5_SortColors.h"
+#include "Array6_MergeSortedArray.h"
+#include "Array7_FindPeakElement.h"
+#include "Array8_MergeIntervals.h"
 
 int main()
 {
@@ -12,5 +15,8 @@ int main()
 	//Array2_MoveZero();
 	//Array4_FindPivotIndex();
 	//Array4_MinimumSize_SubArraySum();
-	Array5_SortColors();
+	//Array5_SortColors();
+	//Array6_MergeSortedArray();
+	//Array8_Peak();
+	Array9_MergeIntervals();
 }

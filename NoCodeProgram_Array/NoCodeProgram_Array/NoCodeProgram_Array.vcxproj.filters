@@ -36,6 +36,15 @@
     <ClInclude Include="Array5_SortColors.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Array6_MergeSortedArray.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Array7_FindPeakElement.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Array8_MergeIntervals.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
