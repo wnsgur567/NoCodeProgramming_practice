@@ -45,6 +45,9 @@
     <ClInclude Include="Array8_MergeIntervals.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Array10_ShortestUnsortedContinuousSubArray.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

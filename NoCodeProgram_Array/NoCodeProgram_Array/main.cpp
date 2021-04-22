@@ -7,6 +7,7 @@
 #include "Array6_MergeSortedArray.h"
 #include "Array7_FindPeakElement.h"
 #include "Array8_MergeIntervals.h"
+#include "Array10_ShortestUnsortedContinuousSubArray.h"
 
 int main()
 {
@@ -18,5 +19,6 @@ int main()
 	//Array5_SortColors();
 	//Array6_MergeSortedArray();
 	//Array8_Peak();
-	Array9_MergeIntervals();
+	//Array9_MergeIntervals();
+	Array10_ShortestUnsortedContinuousSubarray();
 }
