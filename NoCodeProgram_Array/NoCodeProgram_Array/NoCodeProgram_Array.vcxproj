@@ -140,6 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Array10_ShortestUnsortedContinuousSubArray.h" />
+    <ClInclude Include="Array11_FindDuplicates.h" />
+    <ClInclude Include="Array12_2sum3sum4sum.h" />
     <ClInclude Include="Array1_quicksort.h" />
     <ClInclude Include="Array2_BinarySearch.h" />
     <ClInclude Include="Array3_MoveZero.h" />

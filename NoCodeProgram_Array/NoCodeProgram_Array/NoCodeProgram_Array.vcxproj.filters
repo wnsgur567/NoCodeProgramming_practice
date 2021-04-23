@@ -48,6 +48,12 @@
     <ClInclude Include="Array10_ShortestUnsortedContinuousSubArray.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Array11_FindDuplicates.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Array12_2sum3sum4sum.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
